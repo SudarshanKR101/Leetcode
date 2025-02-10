@@ -1,0 +1,15 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        newstr=""
+        newsen=""
+        s=s+" "
+        for i in range(len(s)):
+            if s[i]!=" ":
+                newstr=newstr+s[i]
+            elif newstr!="":
+                if newsen=="":
+                    newsen=newsen+newstr
+                else:
+                    newsen=newstr+" "+newsen
+                newstr=""
+        return newsen
